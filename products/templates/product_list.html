@@ -1,0 +1,15 @@
+
+
+{% extends 'base.html' %}
+<title>Products</title>
+{% block content %}
+  {% for product in products %}
+    <a href="#"><img src="{{ product.image.url }}"></a><br><br>
+    <a href="#">{{ product.info }}</a><br><br>
+    {{ product.price }}<br><br>
+    {% if product.discounted_price %}
+      Discount: {{ product.discount }}%<br><br>
+      {{ product.discounted_price }}
+    {% endif %}
+  {% endfor %}
+{% endblock content %}

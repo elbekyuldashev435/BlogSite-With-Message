@@ -1,0 +1,18 @@
+
+
+{% extends 'base.html' %}
+<title>Contacts</title>
+{% block content %}
+<h1>Contacts</h1>
+<h2>--------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------</h2>
+    {% for contact in contacts %}
+        <a href="{% url 'home:message' contact.pk %}"><img src="{{ contact.image.url }}" height="100"></a>
+        <h4>{{ contact.name }}</h4>
+        username: <a href="#">{{ contact.username }}</a><br><br>
+        {{ contact.first_name }} | {{ contact.last_name}}<br><br>
+        <a href="{% url 'home:send-message' contact.pk %}"><button>Send Message</button></a>
+        <a href="{% url 'home:message' contact.pk %}"><button>Chat</button></a>
+<h2>-------------------------------</h2>
+    {% endfor %}
+{% endblock content %}

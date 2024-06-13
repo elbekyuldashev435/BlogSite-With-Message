@@ -1,0 +1,23 @@
+
+{% extends 'base.html' %}
+{% load static %}
+<title>Profile</title>
+
+<link rel="stylesheet" href="#">
+
+{% block content %}
+<body>
+  <h1>Profile</h1>
+  <img alt="user-image" style="border-radius: 55px" src="{{ user.image.url }} " height="100px"><br>
+  <h3>Username: {{ user.username }}</h3>
+  <h3>First name: {{ user.first_name }}</h3>
+  <h3>Last name: {{ user.last_name }}</h3>
+  <h3>Email: {{ user.email }}</h3>
+  <a href="{% url 'users:update-profile' %}"><button>Edit profile</button></a><br><br>
+  <a href="{% url 'home:contacts' %}"><button>Contacts</button></a>
+  <a href="{% url 'home:add-contact' %}"><button>Add contact</button></a>
+  <a href="{% url 'home:messages' %}"><button>Notifications</button></a>
+  <h4>----------------------------------------------------------------------------------------------------------------------------------------------------</h4>
+
+</body>
+{% endblock content %}

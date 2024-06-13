@@ -1,0 +1,15 @@
+
+
+{% extends 'base.html' %}
+<title>Messages</title>
+{% block content %}
+<h1>All messages</h1>
+    <h2>-----------------------------------------------------------------------------------------------------------</h2>
+        {% for message in messages %}
+            <h2>From: <a href="#">{{ message.conversation.user.username }}</a></h2>
+            <h3>{{ message.message }}</h3>
+            <h4>Time: {{ message.timestamp }}</h4>
+            <a href="#"><button>Send message</button></a>
+    <h2>-----------------------------------------------------------------------------------------------------------</h2>
+        {% endfor %}
+{% endblock content %}

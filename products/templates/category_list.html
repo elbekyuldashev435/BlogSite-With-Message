@@ -1,0 +1,10 @@
+
+
+{% extends 'base.html' %}
+<title>Category List</title>
+
+{% block content %}
+  {% for category in categories %}
+    <a href="{% url 'products:brand-list' category.pk %}"><h3>{{ category.name }}</h3></a>
+  {% endfor %}
+{% endblock content %}

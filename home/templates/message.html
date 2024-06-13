@@ -1,0 +1,18 @@
+
+
+{% extends 'base.html' %}
+<title>Chat</title>
+{% block content %}
+<h1>Chat</h1>
+<h2>-------------------------------------------------------------------------------------</h2>
+    {% for message in messages %}
+        <h3>You: <a href="#">{{ message.sender }}</a></h3>
+        <h3>{{ message.message}}</h3>
+        <h4>Time: {{ message.timestamp }}</h4>
+        {% if message.sender == request.user.username %}
+            <a href="#"><button>Delete</button></a>
+        {% endif %}
+<h2>-------------------------------------------------------------------------------------</h2>
+
+    {% endfor %}
+{% endblock content %}

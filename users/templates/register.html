@@ -1,0 +1,19 @@
+
+
+{% extends 'base.html' %}
+{% load static %}
+<title>Register</title>
+
+<link rel="stylesheet" href="">
+
+{% block content %}
+
+<body>
+  <h1>Register Page</h1>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">submit</button>
+  </form>
+</body>
+{% endblock content %}
